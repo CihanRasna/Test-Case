@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Text distanceText;
     private void Start()
     {
+        Time.timeScale = 1;
         distanceText = FindObjectOfType<Text>();
         distanceText.text = TravelledRange() + " M";
     }
@@ -27,6 +28,7 @@ public class UIManager : MonoBehaviour
         if (!Rotate.isAngleClose)
         {
             panel.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 
